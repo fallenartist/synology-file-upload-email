@@ -1,6 +1,11 @@
 #!/bin/bash
 
-cd '/volume1/Assets/Uploads' || exit 
+cd '/volume1/Assets/Uploads' || exit
+
+# Check if prior_dir exists, create it if missing
+if [ ! -f prior_dir ]; then
+    touch prior_dir
+fi
 
 # Generate a list of current directory structure including files
 find . -type f > current_dir 
